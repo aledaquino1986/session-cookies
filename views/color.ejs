@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Elegir color</title>
+  <style>
+    body { 
+    background-color: <%= color %>
+   }
+  </style>
+</head>
+<body>
+  <h1>Formulario color</h1>
+   <form action="/color" method="POST">
+     <input type="color" name="color"><br>
+     <button type ="submit">Cargar</button> <br>
+     <label>Recordar</label>
+     <input type="checkbox" name="recordar" id="recordar"> 
+   </form>
+
+</body>
+</html>
