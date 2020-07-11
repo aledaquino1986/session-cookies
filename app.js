@@ -7,6 +7,8 @@ var logger = require('morgan');
 var indexRouter = require('./routes/index');
 var colorRouter = require("./routes/color")
 var session = require("express-session")
+var flash = require('express-flash-messages')
+
 
 var app = express();
 
@@ -20,7 +22,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(session({secret: "Los vengadores"}));
 app.use(express.static(path.join(__dirname, 'public')));
-
+app.use(flash())
 app.use('/', indexRouter);
 app.use('/color', colorRouter);
 

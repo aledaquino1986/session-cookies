@@ -12,6 +12,11 @@
 </head>
 <body>
   <h1>Formulario color</h1>
+   
+
+  <%if (mensaje) { %>
+       <p><%=mensaje%></p>
+    <% } %>
    <form action="/color" method="POST">
      <input type="color" name="color"><br>
      <button type ="submit">Cargar</button> <br>

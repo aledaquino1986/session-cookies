@@ -11,17 +11,18 @@ let colorController = {
     //leer un dato de session
      console.log("entro a session", req.session.userLogged);
 
-    res.render("color", {color: req.cookies.background})
+    res.render("color", {color: req.cookies.background, mensaje: req.session.mensaje})
   },
 
   elegirColor: function(req, res) {
     let color = req.body.color;
-
+    req.session.mensaje = `Has elegido el color: ${color}`
+    let mensaje = req.session.mensaje
+    console.log(mensaje)
     if (req.body.recordar == "on") {
       res.cookie("background", color)
     }
-    
-    res.render("color", {color: color})
+    res.render("color", {color: color, mensaje: mensaje})
   }
 }
 
